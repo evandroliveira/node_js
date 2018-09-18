@@ -1,7 +1,7 @@
 const { Usuario } = require ('../models');
 const bcrypt = require('bcryptjs');
 
-//Importações internas
+//Importações internas...
 const { gerarToken } = require('../utils/token');
 const { mensagens } = require('../utils/customMensagens');
 
@@ -9,7 +9,7 @@ const cadastro = (request, response) =>  {
 
     const { body: { nome, email, cpf, nascimento, senha } } = request;
 
-    //Senha Criptografada
+    //Senha Criptografada...
     const senhaSegura = bcrypt.hashSync(senha, bcrypt.genSaltSync(10))
 
     Usuario.create({
